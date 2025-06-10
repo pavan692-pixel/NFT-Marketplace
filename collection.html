@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WebLock - Top NFT Collections</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #000000;
+      --card-bg: #f9f9f9;
+      --button: #111;
+      --button-text: #fff;
+    }
+
+    body.dark {
+      --bg: #121212;
+      --text: #ffffff;
+      --card-bg: #1f1f1f;
+      --button: #ffffff;
+      --button-text: #000000;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: var(--card-bg);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .theme-toggle {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    .top-collections {
+      text-align: center;
+    }
+
+    .top-collections h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .description {
+      font-size: 1rem;
+      color: gray;
+    }
+
+    .filters {
+      margin: 1.5rem 0;
+    }
+
+    .filters button {
+      margin: 0.3rem;
+      padding: 0.5rem 1rem;
+      background: var(--button);
+      color: var(--button-text);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .filters button:hover {
+      opacity: 0.8;
+    }
+
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .collection-card {
+      background: var(--card-bg);
+      padding: 1rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .collection-card:hover {
+      transform: scale(1.03);
+    }
+
+    .collection-card img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .collection-card h3 {
+      margin: 0.8rem 0 0.3rem;
+    }
+
+    .collection-card p {
+      margin: 0.2rem 0;
+      font-weight: bold;
+    }
+
+    .collection-card span {
+      font-size: 0.85rem;
+      color: gray;
+    }
+
+    footer {
+      margin-top: 4rem;
+      padding: 2rem;
+      background: var(--card-bg);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    footer .socials a {
+      margin: 0 0.5rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">WebLock</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Explore</a>
+      <a href="#">Mint</a>
+      <a href="#">Profile</a>
+      <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="top-collections">
+      <h2>Top NFT Collections</h2>
+      <p class="description">Browse and discover trending NFT collections on WebLock</p>
+
+      <div class="filters">
+        <button>Sort by: Volume</button>
+        <button>Sort by: Floor Price</button>
+        <button>Sort by: Owners</button>
+      </div>
+
+      <div class="collection-grid">
+        <div class="collection-card">
+          <img src="https://i.seadn.io/gcs/files/8a7175d7dbcc2438fdfe48f89d58fa65.png" alt="Mutant Apes">
+          <h3>Mutant Apes</h3>
+          <p>Floor: 12.5 ETH</p>
+          <span>Volume: 130k ETH • Owners: 6.2k • Items: 20k</span>
+        </div>
+
+        <div class="collection-card">
+          <img src="https://i.seadn.io/gcs/files/38fdfb070f3ba8f86cb82a0e22f771b2.png" alt="CryptoPunks">
+          <h3>CryptoPunks</h3>
+          <p>Floor: 65 ETH</p>
+          <span>Volume: 800k ETH • Owners: 3.5k • Items: 10k</span>
+        </div>
+
+        <div class="collection-card">
+          <img src="https://i.seadn.io/gcs/files/cb893621202bfa4f2d2c1fa2d4d31275.png" alt="Bored Ape YC">
+          <h3>Bored Ape YC</h3>
+          <p>Floor: 42 ETH</p>
+          <span>Volume: 550k ETH • Owners: 5.1k • Items: 10k</span>
+        </div>
+
+        <div class="collection-card">
+          <img src="https://i.seadn.io/gcs/files/3ee430e6e13037fc9f49a501bd7e10cf.png" alt="Doodles">
+          <h3>Doodles</h3>
+          <p>Floor: 3.1 ETH</p>
+          <span>Volume: 80k ETH • Owners: 4.4k • Items: 10k</span>
+        </div>
+
+        <div class="collection-card">
+          <img src="https://i.seadn.io/gcs/files/33c041b3db3d9ae718b30cf25c8ae02c.png" alt="Cool Cats">
+          <h3>Cool Cats</h3>
+          <p>Floor: 2.8 ETH</p>
+          <span>Volume: 45k ETH • Owners: 3.8k • Items: 9.9k</span>
+        </div>
+
+        <div class="collection-card">
+          <img src="https://i.seadn.io/gcs/files/eb2d27113202ccdf12e157b7b3b43a3e.png" alt="World of Women">
+          <h3>World of Women</h3>
+          <p>Floor: 4.2 ETH</p>
+          <span>Volume: 90k ETH • Owners: 5.2k • Items: 10k</span>
+        </div>
+
+        <div class="collection-card">
+          <img src="https://i.seadn.io/gcs/files/bb7e889bba26098ccda6c02189798ee6.png" alt="CloneX">
+          <h3>CloneX</h3>
+          <p>Floor: 3.5 ETH</p>
+          <span>Volume: 120k ETH • Owners: 4.9k • Items: 10k</span>
+        </div>
+
+        <div class="collection-card">
+          <img src="https://i.seadn.io/gcs/files/7069265a2bda0f2a6ef7f5e539ab213d.png" alt="Azuki">
+          <h3>Azuki</h3>
+          <p>Floor: 6.2 ETH</p>
+          <span>Volume: 200k ETH • Owners: 5.7k • Items: 10k</span>
+        </div>
+
+        <div class="collection-card">
+          <img src="https://i.seadn.io/gcs/files/48a5a76d6b14f8dc11eb8c230a14732c.png" alt="Moonbirds">
+          <h3>Moonbirds</h3>
+          <p>Floor: 5.5 ETH</p>
+          <span>Volume: 150k ETH • Owners: 6k • Items: 10k</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Follow Us:</p>
+    <div class="socials">
+      <a href="#">Twitter</a>
+      <a href="#">Discord</a>
+      <a href="#">Telegram</a>
+    </div>
+    <p>© 2025 WebLock. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
+</body>
+</html>
