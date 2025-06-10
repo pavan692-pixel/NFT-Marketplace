@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WebLock - Explore NFTs</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #000000;
+      --card-bg: #f9f9f9;
+      --button: #111;
+      --button-text: #fff;
+    }
+
+    body.dark {
+      --bg: #121212;
+      --text: #ffffff;
+      --card-bg: #1f1f1f;
+      --button: #ffffff;
+      --button-text: #111;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: 0.3s;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 32px;
+      background: var(--card-bg);
+    }
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    #themeToggle {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    .explore-main {
+      padding: 30px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .featured-nft {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .featured-nft img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 12px;
+    }
+
+    .nft-details {
+      max-width: 600px;
+    }
+
+    .nft-details h2 {
+      margin-top: 0;
+    }
+
+    .stats {
+      margin: 10px 0;
+      display: flex;
+      gap: 30px;
+    }
+
+    .nft-actions button {
+      margin-right: 10px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: none;
+      background: var(--button);
+      color: var(--button-text);
+      cursor: pointer;
+    }
+
+    .filters {
+      margin: 30px 0 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .filters select {
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-weight: bold;
+    }
+
+    .nft-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .nft-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .nft-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .nft-card img {
+      width: 100%;
+    }
+
+    .nft-info {
+      padding: 12px;
+    }
+
+    .section-title {
+      font-size: 1.4em;
+      margin: 40px 0 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: var(--card-bg);
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">WebLock</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Explore</a>
+      <a href="#">Mint</a>
+      <a href="#">Profile</a>
+    </nav>
+    <button id="themeToggle">🌙</button>
+  </header>
+
+  <main class="explore-main">
+    <div class="featured-nft">
+      <img src="https://i.seadn.io/gae/KQOzJP.jpg" alt="Cyber Ape #2091" />
+      <div class="nft-details">
+        <h2>Cyber Ape #2091</h2>
+        <p><strong>Collection:</strong> Cyber Apes</p>
+        <div class="stats">
+          <p><strong>Price:</strong> 2.5 ETH</p>
+          <p><strong>Floor:</strong> 2.2 ETH</p>
+          <p><strong>Volume:</strong> 24.3k ETH</p>
+        </div>
+        <p><strong>Activity:</strong></p>
+        <ul>
+          <li>Sold to @PixelQueen - 2.5 ETH - 5h ago</li>
+          <li>Listed by @MetaMogul - 2.5 ETH - 7h ago</li>
+          <li>Minted by @CyberCore - 1d ago</li>
+        </ul>
+        <div class="nft-actions">
+          <button>Buy</button>
+          <button>Make Offer</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="filters">
+      <select>
+        <option>Sort by: Recently Listed</option>
+        <option>Price: Low to High</option>
+        <option>Price: High to Low</option>
+        <option>Recently Sold</option>
+      </select>
+
+      <select>
+        <option>Filter: All Categories</option>
+        <option>Art</option>
+        <option>Gaming</option>
+        <option>Collectibles</option>
+      </select>
+    </div>
+
+    <h3 class="section-title">Recently Sold</h3>
+    <div class="nft-grid">
+      <div class="nft-card">
+        <img src="https://i.seadn.io/gae/U4XNQw.jpg" alt="Galaxy Girl" />
+        <div class="nft-info">
+          <h4>Galaxy Girl #119</h4>
+          <p>Sold for: 3.8 ETH</p>
+        </div>
+      </div>
+      <div class="nft-card">
+        <img src="https://i.seadn.io/gae/DEMO002.jpg" alt="Star Witch" />
+        <div class="nft-info">
+          <h4>Star Witch #101</h4>
+          <p>Sold for: 1.1 ETH</p>
+        </div>
+      </div>
+      <div class="nft-card">
+        <img src="https://i.seadn.io/gcs/files/01a.jpg" alt="Mutant Ape" />
+        <div class="nft-info">
+          <h4>Mutant Ape #883</h4>
+          <p>Sold for: 11.5 ETH</p>
+        </div>
+      </div>
+      <div class="nft-card">
+        <img src="https://i.seadn.io/gcs/files/03c.jpg" alt="Bored Ape" />
+        <div class="nft-info">
+          <h4>Bored Ape #411</h4>
+          <p>Sold for: 39 ETH</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="section-title">You May Also Like</h3>
+    <div class="nft-grid">
+      <div class="nft-card">
+        <img src="https://i.seadn.io/gae/E1EZXQ.jpg" alt="Pixel Panda" />
+        <div class="nft-info">
+          <h4>Pixel Panda #342</h4>
+          <p>1.2 ETH</p>
+        </div>
+      </div>
+      <div class="nft-card">
+        <img src="https://i.seadn.io/gae/DEMO456.jpg" alt="Neon Tiger" />
+        <div class="nft-info">
+          <h4>Neon Tiger #777</h4>
+          <p>2.7 ETH</p>
+        </div>
+      </div>
+      <div class="nft-card">
+        <img src="https://i.seadn.io/gae/DEMO789.jpg" alt="Alien Mask" />
+        <div class="nft-info">
+          <h4>Alien Mask #888</h4>
+          <p>5.0 ETH</p>
+        </div>
+      </div>
+      <div class="nft-card">
+        <img src="https://i.seadn.io/gcs/files/02b.jpg" alt="CryptoPunk" />
+        <div class="nft-info">
+          <h4>CryptoPunk #5555</h4>
+          <p>64 ETH</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 WebLock. All rights reserved.
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+    });
+  </script>
+</body>
+      </html>
